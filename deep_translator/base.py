@@ -134,9 +134,9 @@ class BaseTranslator(ABC):
         return docx2txt.process(f)
 
     def _read_pdf(self, f: str):
-        import pypdf
+        import PyPDF2
 
-        reader = pypdf.PdfReader(f)
+        reader = PyPDF2.PdfReader(f)
         page = reader.pages[0]
         return page.extract_text()
 
